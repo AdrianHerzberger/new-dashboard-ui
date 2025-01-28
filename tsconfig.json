@@ -20,6 +20,7 @@
     ],
     "paths": {
       "@/theme/*": ["./src/theme/*"],
+      "@/utilities/*": ["./src/utilities/*"],
       "@/*": ["./src/*"]
     }
   },
