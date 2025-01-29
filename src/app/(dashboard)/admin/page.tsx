@@ -1,12 +1,13 @@
 import AttendenceChart from "@/components/AttendenceChart";
 import { CountCharts } from "@/components/CountCharts";
+import FinanceChart from "@/components/FinanceChart";
 import Users from "@/containers/Users";
 import { Box, Grid2 } from "@mui/material";
 import React from "react";
 
 
-export const AdminPage = ({ 
-  
+export const AdminPage = ({
+
 }) => {
   return (
     <Grid2 sx={{
@@ -21,8 +22,8 @@ export const AdminPage = ({
         <Box sx={{
           display: "flex",
           flexDirection: { lg: "row" },
-          justifyContent: {lg: "space-between", xs: "center" },
-          ml: {lg: 1, mx: 0}, 
+          justifyContent: { lg: "space-between", xs: "center" },
+          ml: { lg: 1, mx: 0 },
           gap: 2,
         }}>
           <Users />
@@ -39,7 +40,7 @@ export const AdminPage = ({
               lg: 1 / 3,
             },
             height: {
-              lg: "450px",
+              lg: "400px",
             },
           }}>
             <CountCharts />
@@ -49,11 +50,19 @@ export const AdminPage = ({
               lg: 2 / 3,
             },
             height: {
-              lg: "450px",
+              lg: "400px",
             },
           }}>
             <AttendenceChart />
           </Box>
+        </Box>
+        <Box sx={{
+          p: 2,
+          height: {
+            lg: "355px",
+          },
+        }}>
+          <FinanceChart />
         </Box>
       </Box>
       <Box sx={{
