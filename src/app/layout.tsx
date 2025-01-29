@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   description: "Next.js School Management System",
 };
 
-export default function RootLayout({
-  children,
+export const RootLayout = ({
+  children
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   return (
     <html lang="en">
       <body>
@@ -24,5 +24,7 @@ export default function RootLayout({
         </AppRouterCacheProvider>
       </body>
     </html>
-  );
-}
+  )
+};
+
+export default RootLayout;

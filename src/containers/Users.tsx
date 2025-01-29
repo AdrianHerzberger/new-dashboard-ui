@@ -30,7 +30,8 @@ export const Users = ({
         <Grid2 sx={{
             display: "flex",
             flexDirection: "row",
-            flexWrap: "wrap"
+            justifyContent: {lg: "center"},
+            flexWrap: {lg: "nowrap", xs: "wrap"}
         }}>
             {userCards.map((card, index) => (
                 <Box key={index} sx={{

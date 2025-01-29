@@ -7,46 +7,19 @@ import theme from "@/theme/theme";
 
 const data = [
     {
-        name: '18-24',
-        uv: 31.47,
-        pv: 2400,
-        fill: '#8884d8',
+        name: 'Total',
+        count: 100,
+        fill: "white",
     },
     {
-        name: '25-29',
-        uv: 26.69,
-        pv: 4567,
-        fill: '#83a6ed',
+        name: 'Girls',
+        count: 55,
+        fill: theme.palette.colors.lamaYellow,
     },
     {
-        name: '30-34',
-        uv: 15.69,
-        pv: 1398,
-        fill: '#8dd1e1',
-    },
-    {
-        name: '35-39',
-        uv: 8.22,
-        pv: 9800,
-        fill: '#82ca9d',
-    },
-    {
-        name: '40-49',
-        uv: 8.63,
-        pv: 3908,
-        fill: '#a4de6c',
-    },
-    {
-        name: '50+',
-        uv: 2.63,
-        pv: 4800,
-        fill: '#d0ed57',
-    },
-    {
-        name: 'unknow',
-        uv: 6.67,
-        pv: 4800,
-        fill: '#ffc658',
+        name: 'Boys',
+        count: 45,
+        fill: theme.palette.colors.lamaSky,
     },
 ];
 
@@ -58,15 +31,13 @@ const style = {
 };
 
 export const CountCharts = () => {
-    const demoUrl = 'https://codesandbox.io/p/sandbox/simple-radial-bar-chart-gnwjjg';
-
     return (
         <Grid2 sx={{
             backgroundColor: "white",
             borderRadius: "15px",
             width: "100%",
             height: "100%",
-            p: 2,
+            p: {lg: 2, mx: 0},
         }}>
             <Box sx={{
                 display: "flex",
@@ -79,18 +50,28 @@ export const CountCharts = () => {
             </Box>
             <Box sx={{
                 width: "100%",
-                height: "75%"
+                height: "80%",
+                position: "relative",
             }}>
                 <ResponsiveContainer>
-                    <RadialBarChart cx="50%" cy="50%" innerRadius="10%" outerRadius="80%" barSize={10} data={data}>
+                    <RadialBarChart cx="50%" cy="40%" innerRadius="10%" outerRadius="100%" barSize={32} data={data}>
                         <RadialBar
                             label={{ position: 'insideStart', fill: '#fff' }}
                             background
-                            dataKey="uv"
+                            dataKey="count"
                         />
-                        <Legend iconSize={10} layout="vertical" verticalAlign="middle" />
                     </RadialBarChart>
                 </ResponsiveContainer>
+                <Box
+                    sx={{
+                        position: "absolute", 
+                        top: "40%", 
+                        left: "50%", 
+                        transform: "translate(-50%, -50%)",
+                    }}
+                >
+                    <Image src={"/maleFemale.png"} alt="gender" width={50} height={50} />
+                </Box>
             </Box>
             <Grid sx={{
                 display: "flex",
@@ -136,7 +117,7 @@ export const CountCharts = () => {
                         <Typography sx={{
                             fontSize: "10px",
                             color: "lightgrey"
-                        }}>Boys (55%)</Typography>
+                        }}>Girls (55%)</Typography>
                     </Box>
                 </Box>
             </Grid>
