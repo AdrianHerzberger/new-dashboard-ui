@@ -1,0 +1,14 @@
+.reactCalendar {
+    width: 100%;
+    border: none;
+}
+
+.react-calendar__navigation__label_labelText {
+    font-weight: 600 !important;
+}
+
+.react-calenda__tile--active {
+    background-color: "#C3EBFA" !important;
+    color: black !important;
+}
+  
